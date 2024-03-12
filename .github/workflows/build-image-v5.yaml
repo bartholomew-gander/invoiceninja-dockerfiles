@@ -5,6 +5,7 @@ name: Build Container Image
 # Only trigger on semver shaped tags.
 # Ref: https://github.com/metcalfc/docker-action-examples/blob/main/.github/workflows/release.yml
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - "alpine/5/**"
