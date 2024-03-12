@@ -13,6 +13,7 @@ on:
       - "alpine/5/**"
     branches:
       - master
+      - armhf
 
 jobs:
   docker:
@@ -46,7 +47,7 @@ jobs:
           context: ./alpine/5/
           build-args: INVOICENINJA_VERSION=5-stable
           target: prod
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/armhf
           tags: invoiceninja/invoiceninja:cache
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
